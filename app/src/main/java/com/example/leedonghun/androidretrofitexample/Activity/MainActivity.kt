@@ -1,4 +1,5 @@
 package com.example.leedonghun.androidretrofitexample.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -49,6 +50,15 @@ class MainActivity : AppCompatActivity() {
             })//SearchRetrofit끝
 
         }//get_btn 끝
+
+
+        second_move_btn.setOnClickListener {
+
+            val intent=Intent(this,SeconActivity::class.java)
+            startActivity(intent)
+
+        }
+
     }//onCreate() 끝
 
 
