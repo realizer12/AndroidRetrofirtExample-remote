@@ -16,8 +16,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
 
-    //버튼  클릭된 상태인지 여부
-    var check:Boolean=false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
