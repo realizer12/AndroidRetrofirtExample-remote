@@ -21,6 +21,9 @@
         <activity android:name=".Activity.SeconActivity">
 
         </activity>
+        <activity android:name=".Activity.SplashActivity">
+
+        </activity>
     </application>
 
 </manifest>

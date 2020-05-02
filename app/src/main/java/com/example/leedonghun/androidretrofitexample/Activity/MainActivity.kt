@@ -13,9 +13,8 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-
+//메인 프로젝트를  하면 프로그램 진행한다.
 class MainActivity : AppCompatActivity() {
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +24,7 @@ class MainActivity : AppCompatActivity() {
         //서버에서  해당 원하는 값을 가져올때 사용한다.
         get_btn.setOnClickListener {
 
-            SearchRetrofit.getService()
-                .get_uid("25").enqueue(object :Callback<String>{
+            SearchRetrofit.getService().get_uid("25").enqueue(object :Callback<String>{
 
                 override fun onResponse(call: Call<String>, response: Response<String>) {
 
@@ -50,6 +48,16 @@ class MainActivity : AppCompatActivity() {
         }//get_btn 끝
 
 
+
+        //두번째 버튼  클릭 리스너
+        second_move_btn.setOnClickListener {
+
+            val intent1=Intent(this, SeconActivity::class.java)
+            startActivity(intent1)// 두번째  엑티비티로 넘어간다.
+
+        }
+
+        //두번째 이동 버튼
         second_move_btn.setOnClickListener {
 
             val intent=Intent(this,SeconActivity::class.java)
