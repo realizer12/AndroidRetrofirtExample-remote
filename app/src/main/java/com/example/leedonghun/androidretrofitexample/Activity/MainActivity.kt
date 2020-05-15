@@ -13,19 +13,19 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+
 //메인 프로젝트를  하면 프로그램 진행한다.
 class MainActivity : AppCompatActivity() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         //서버에서  해당 원하는 값을 가져올때 사용한다.
         get_btn.setOnClickListener {
 
             SearchRetrofit.getService().get_uid("25").enqueue(object :Callback<String>{
-
                 override fun onResponse(call: Call<String>, response: Response<String>) {
 
                     //response successful
@@ -33,11 +33,15 @@ class MainActivity : AppCompatActivity() {
 
                         Log.v("check11111",response.body())
                         text_for_show_result.setText(response.body())
+
                     }
 
                 }//onResponse()끝
 
+
+
                 override fun onFailure(call: Call<String>, t: Throwable) {
+
                     Log.v("check1111",t.message)
                     text_for_show_result.setText(null)
 
@@ -93,8 +97,7 @@ class MainActivity : AppCompatActivity() {
             .create()
 
         private val retrofit =
-
-         Retrofit.Builder()
+            Retrofit.Builder()
              .baseUrl(Retrofitapi.baseurl)
              .addConverterFactory(GsonConverterFactory.create(gson))
              .build()
