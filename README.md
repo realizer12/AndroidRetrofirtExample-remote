@@ -1,2 +1,2 @@
-Practice Kotlin  with  Retrofit2
-that's it
+코틀린을 공부 해볼겸
+간단한  레트로핏  통신 구현해봄.
